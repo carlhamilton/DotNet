@@ -8,6 +8,15 @@
           "jQuery": "[1.9.1, 4.0.0)"
         }
       },
+      "Dynamitey/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Dynamitey.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Dynamitey.dll": {}
+        }
+      },
       "jQuery/3.1.1": {
         "type": "package"
       },
@@ -4839,6 +4848,20 @@
         "content/fonts/glyphicons-halflings-regular.ttf",
         "content/fonts/glyphicons-halflings-regular.woff",
         "content/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    },
+    "Dynamitey/1.0.2": {
+      "sha512": "9djtY/cQ4lGpS9+qw5PS+t4MYGyyNG5Fn4Sz99CJAMtJ1ulseynTayRRojQ7DRX1gcV+7nGJvsSti5isR0UYog==",
+      "type": "package",
+      "path": "dynamitey/1.0.2",
+      "files": [
+        "dynamitey.1.0.2.nupkg.sha512",
+        "dynamitey.nuspec",
+        "lib/net40/Dynamitey.XML",
+        "lib/net40/Dynamitey.dll",
+        "lib/net40/Dynamitey.pdb",
+        "lib/portable-win+net45+sl40+wp80/Dynamitey.XML",
+        "lib/portable-win+net45+sl40+wp80/Dynamitey.dll"
       ]
     },
     "jQuery/3.1.1": {
@@ -12750,7 +12773,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Dynamitey >= 1.0.2",
       "Microsoft.AspNet.Mvc >= 5.2.3",
+      "Microsoft.AspNet.WebPages >= 3.2.3",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.AspNetCore.StaticFiles >= 2.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 2.0.0",
@@ -12826,6 +12851,14 @@
             "version": "2.0.0",
             "autoReferenced": true
           },
+          "Microsoft.AspNet.WebPages": {
+            "target": "Package",
+            "version": "3.2.3"
+          },
+          "Dynamitey": {
+            "target": "Package",
+            "version": "1.0.2"
+          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "2.0.0"
@@ -12852,6 +12885,16 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Dynamitey 1.0.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Dynamitey",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

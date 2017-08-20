@@ -7,5 +7,8 @@ namespace OdeToFood.Models
 {
     public class Restaurant
     {
+        public int MyProperty { get; set; }
+        public string Name { get; set; }
+
     }
 }
