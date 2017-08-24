@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework.Internal;
@@ -29,6 +30,7 @@ namespace OdeToFood
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
         }
@@ -40,12 +42,36 @@ namespace OdeToFood
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
+            else
             {
-                var message = greeter.GetGreeting();
-                await context.Response.WriteAsync(message);
-            });
+                app.UseExceptionHandler(new ExceptionHandlerOptions
+                {
+                    ExceptionHandler = context => context.Response.WriteAsync("Oops!")
+                });
+            }
+
+            app.UseFileServer();
+
+            app.UseMvc(ConfigureRoutes);
+
+            app.Run(ctx => ctx.Response.WriteAsync("Not Found"));
+
+            //app.UseWelcomePage(new WelcomePageOptions
+            //{
+            //    Path = "/welcome"
+            //});
+
+            //app.Run(async (context) =>
+            //{
+            //    var message = greeter.GetGreeting();
+            //    await context.Response.WriteAsync(message);
+            //});
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            // /Home/Index
+            routeBuilder.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
         }
     }
 }
