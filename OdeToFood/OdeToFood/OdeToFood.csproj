@@ -7,14 +7,23 @@
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="3.3.7" />
     <PackageReference Include="Dynamitey" Version="1.0.2" />
+    <PackageReference Include="EntityFramework" Version="6.2.0-beta1" />
     <PackageReference Include="jQuery" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
+    <PackageReference Include="Microsoft.entityframeworkcore.sqlserver" Version="2.0.0" />
+    <PackageReference Include="Microsoft.entityframeworkcore.TOOLS" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.3" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.0" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="NUnit" Version="3.7.1" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.2" />
   </ItemGroup>
 
   <ItemGroup>
